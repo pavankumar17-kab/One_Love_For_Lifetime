@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Pinkuu | One Love For Lifetime 🖤</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09070c;
+    color: #f8eaf0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, #50152e55, transparent 35%),
+      radial-gradient(circle at 85% 70%, #38205255, transparent 35%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: .8; }
+    85% { opacity: .7; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+nav {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff16;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    color: #e7b8c9;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.nav-tag {
+    color: #c69aaa;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 65px 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+    color: #dba8bc;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 90px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 25px 0;
+    background: linear-gradient(120deg, #fff0f5, #d78cae, #e8c9a1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    color: #e6b2c8;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #c6b5c0;
+    line-height: 2;
+    max-width: 550px;
+    margin: auto;
+}
+
+.primary-btn {
+    margin-top: 35px;
+    padding: 15px 35px;
+    border-radius: 40px;
+    border: 1px solid #d89ab6;
+    background: linear-gradient(120deg, #5b1938, #a43d69);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 30px #9c356044;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px #e276a2aa;
+}
+
+section {
+    padding: 85px 8%;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #e9b6c9;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aa98a4;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+.story-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 45px 35px;
+    border: 1px solid #a65c794d;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #24151f, #120f18);
+    box-shadow: 0 20px 70px #00000066;
+    text-align: center;
+}
+
+.story-card p {
+    color: #d9c5cf;
+    line-height: 2.1;
+    margin: 17px 0;
+    font-size: 15px;
+}
+
+.story-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.thanks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.thanks-card {
+    padding: 30px 24px;
+    background: linear-gradient(145deg, #261522, #15101b);
+    border: 1px solid #a75d783d;
+    border-radius: 18px;
+    text-align: center;
+    transition: .3s;
+}
+
+.thanks-card:hover {
+    transform: translateY(-7px);
+    border-color: #d58da9;
+}
+
+.thanks-card span {
+    font-size: 35px;
+}
+
+.thanks-card h3 {
+    color: #e8b3c7;
+    margin: 17px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+}
+
+.thanks-card p {
+    color: #bdaeb8;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.photo-frame {
+    background: #21151f;
+    padding: 12px 12px 25px;
+    border: 1px solid #b77a9255;
+    border-radius: 12px;
+    transform: rotate(-2deg);
+    transition: .4s;
+}
+
+.photo-frame:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photo-frame p {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #e9c0d0;
+    margin-top: 14px;
+}
+
+.final-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #39182d, #17101d);
+    border: 1px solid #c17c9c66;
+    box-shadow: 0 0 65px #802c5040;
+}
+
+.final-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #f1c8d7;
+    font-size: 44px;
+    margin: 20px 0;
+}
+
+.final-card p {
+    color: #e0c8d3;
+    line-height: 2;
+}
+
+#secret {
+    display: none;
+    margin-top: 30px;
+    animation: appear 1s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    color: #9d8493;
+    font-size: 12px;
+    border-top: 1px solid #ffffff15;
+}
+
+@media(max-width: 600px) {
+    nav { padding: 18px 5%; }
+    .nav-tag { font-size: 9px; }
+    section { padding: 65px 6%; }
+    .section-title { font-size: 38px; }
+    .story-card { padding: 30px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<nav>
+    <div class="logo">♡ One Love</div>
+    <div class="nav-tag">FOREVER & ALWAYS 🖤</div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">A little world made just for you</div>
+
+        <h1>One Love<br>For Lifetime</h1>
+
+        <h2>Hey, Pinkuu! 🧸💕</h2>
+
+        <p>
+            To the girl who owns my heart forever 🖤
+            <br>
+            Six years. Countless memories.
+            One beautiful love story. ❤️
+        </p>
+
+        <button class="primary-btn"
+            onclick="document.getElementById('story').scrollIntoView()">
+            Enter Our Little World 💌
+        </button>
+    </div>
+</header>
+
+<section id="story">
+    <h2 class="section-title">Our Beautiful Story ✨</h2>
+    <p class="section-subtitle">One YES changed everything.</p>
+
+    <div class="story-card">
+        <div class="story-icon">💗</div>
+
+        <h2 style="color:#e8b3c7;font-family:Georgia">
+            Six Years Ago...
+        </h2>
+
+        <p>
+            You accepted my love, and that moment
+            became one of the most beautiful memories
+            of my life.
+        </p>
+
+        <p>
+            I may not have everything in this world,
+            but having you in my life is something
+            I will always be grateful for.
+        </p>
+
+        <p>
+            This little website is my way of saying
+            how much you mean to me. 🥺
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">A Thousand Thank Yous 💌</h2>
+    <p class="section-subtitle">Things my heart wants to tell you.</p>
+
+    <div class="thanks-grid">
+
+        <div class="thanks-card">
+            <span>❤️</span>
+            <h3>Thank You For Choosing Me</h3>
+            <p>Thank you for accepting my love and making me a part of your life.</p>
+        </div>
+
+        <div class="thanks-card">
+            <span>🫂</span>
+            <h3>Thank You For Supporting Me</h3>
+            <p>Thank you for standing beside me whenever I feel down, through every situation.</p>
+        </div>
+
+        <div class="thanks-card">
+            <span>🧸</span>
+            <h3>Your Endless Care</h3>
+            <p>Your care sometimes feels just like a second mother. You make me feel safe and protected.</p>
+        </div>
+
+        <div class="thanks-card">
+            <span>💗</span>
+            <h3>Your Beautiful Love</h3>
+            <p>Thank you for giving me so much love, understanding and happiness.</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Our Little Memories 📸</h2>
+    <p class="section-subtitle">
+        Every picture holds a little piece of our story.
+    </p>
+
+    <div class="gallery" id="memoryGallery"></div>
+
+</section>
+
+<section>
+    <div class="final-card">
+        <div style="font-size:48px">💍🖤</div>
+
+        <h2>One Little Request...</h2>
+
+        <p>
+            I don't expect every day to be perfect.
+            I just want us to keep choosing each other,
+            growing together and loving each other.
+        </p>
+
+        <button class="primary-btn" onclick="revealSecret()">
+            One Last Message 💌
+        </button>
+
+        <div id="secret">
+            <h2>My Pinkuu! 🥺❤️</h2>
+
+            <p>
+                I'm sorry for not wishing you at the
+                right moment on our special day.
+                I knew how important this day was.
+            </p>
+
+            <p>
+                Please never doubt how much you mean
+                to me. I want to make more memories,
+                celebrate more years and keep choosing you.
+            </p>
+
+            <h2>Happy 6 Years of Us! 💗</h2>
+
+            <h2>I'd Choose You Again & Again. 🖤</h2>
+        </div>
+    </div>
+</section>
+
+<footer>
+    MADE WITH ENDLESS LOVE FOR PINKUU 🖤
+    <br><br>
+    ONE LOVE. ONE STORY. ONE LIFETIME. ♾️
+</footer>
+
+<script>
+function revealSecret() {
+    const secret = document.getElementById("secret");
+    secret.style.display = "block";
+    secret.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+const symbols = ["❤️", "💕", "✨", "🦋", "💗", "🌹"];
+
+function createParticle() {
+    const particle = document.createElement("div");
+    particle.className = "particle";
+    particle.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.animationDuration =
+        (6 + Math.random() * 7) + "s";
+    particle.style.fontSize =
+        (12 + Math.random() * 18) + "px";
+
+    document.getElementById("particles").appendChild(particle);
+
+    setTimeout(() => particle.remove(), 14000);
+}
+
+setInterval(createParticle, 650);
+const photoFiles = [
+    "photos/photo1.jpg.jpeg",
+    "photos/photo2.jpg.jpeg",
+    "photos/photo3.jpg.jpeg",
+    "photos/photo4.jpg.jpeg",
+    "photos/photo5.jpg.jpeg"
+];
+
+const gallery = document.getElementById("memoryGallery");
+
+photoFiles.forEach((photo, index) => {
+    const frame = document.createElement("div");
+    frame.className = "photo-frame";
+
+    const img = document.createElement("img");
+    img.src = photo;
+    img.alt = `Our memory ${index + 1}`;
+
+    const caption = document.createElement("p");
+    caption.textContent = [
+        "My Favourite Memory ❤️",
+        "My Favourite Person 🧸",
+        "Us, Always 💕",
+        "Beautiful Moments ✨",
+        "Forever Together 🖤"
+    ][index] || `Our Memory ${index + 1} ❤️`;
+
+    frame.appendChild(img);
+    frame.appendChild(caption);
+    gallery.appendChild(frame);
+});
+</script>
+
+</body>
+</html>
